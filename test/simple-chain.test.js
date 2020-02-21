@@ -19,7 +19,7 @@ describe('Make chain!', () => {
             assert.deepEqual(chainMaker.addLink(function() {}).addLink('2nd').addLink('3rd').removeLink(2).reverseChain().finishChain(),'( 3rd )~~( function() {} )');
         });
         it.optional('throws an Error on removing wrong link', () => {
-            expect(() => chainMaker.addLink(1).addLink(2).addLink(3).removeLink(0)).to.throw();
+                expect(() => chainMaker.addLink(1).addLink(2).addLink(3).removeLink(0)).to.throw();
             expect(() => chainMaker.addLink(1).addLink(2).addLink(3).removeLink('2nd')).to.throw();
             expect(() => chainMaker.addLink(1).addLink(2).addLink(3).removeLink(-2)).to.throw();
             expect(() => chainMaker.addLink(1).addLink(2).addLink(3).removeLink(4)).to.throw();
