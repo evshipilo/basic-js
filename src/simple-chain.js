@@ -9,7 +9,8 @@ const chainMaker = {
         return this;
     },
     removeLink(position) {
-        if ((position ^ 0) != position || position > this.arrLink.length || position < 1) throw new Error('wrong position');
+        if ((position ^ 0) != position || position > this.arrLink.length || position < 1) {
+            this.arrLink=[]; throw new Error('wrong position');}
         this.arrLink.splice(position-1, 1);
         return this;
     },
